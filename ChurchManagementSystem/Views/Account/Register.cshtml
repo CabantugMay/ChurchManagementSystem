@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="~/js/login.js"></script>
+</head>
+<body>
+    @{
+        var passwordErrors = ViewData.ModelState["password"]?.Errors;
+        var confirmPasswordErrors = ViewData.ModelState["confirmpassword"]?.Errors;
+    }
+
+    <div id="loginScreen" class="login-screen">
+        <div class="login-card">
+
+            <div class="login-title">
+                Almighty God Covenant Church - Mariveles
+            </div>
+
+            <div class="login-sub"></div>
+
+            <form asp-controller="Account"
+                  asp-action="Register"
+                  method="post">
+
+                <div class="field">
+                    <label class="label">Username</label>
+
+                    <input type="text"
+                           id="loginUsername"
+                           name="username"
+                           class="form-control" value="@(ViewData.ModelState["username"]?.AttemptedValue ?? "")" />
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+
+                    <div class="password-wrapper">
+
+                        <input type="password"
+                               id="loginPassword"
+                               name="password"
+                               class="form-control" />
+
+                        @if (passwordErrors != null &&
+                        passwordErrors.Count > 0)
+                        {
+                            <span class="password-warning">
+                                ⚠
+
+                                <span class="password-tooltip">
+                                    @foreach (var error in passwordErrors)
+                                    {
+                                        <span>@error.ErrorMessage</span>
+                                    }
+                                </span>
+                            </span>
+                        }
+
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Confirm Password</label>
+
+                    <div class="password-wrapper">
+
+                        <input type="password"
+                               id="confirmPassword"
+                               name="confirmPassword"
+                               class="form-control" />
+
+                        @if (confirmPasswordErrors != null &&
+                             confirmPasswordErrors.Count > 0)
+                        {
+                            <span class="password-warning">
+                                ⚠
+
+                                <span class="password-tooltip">
+                                    @foreach (var error in confirmPasswordErrors)
+                                    {
+                                        <span>@error.ErrorMessage</span>
+                                    }
+                                </span>
+                            </span>
+                        }
+
+                    </div>
+
+                    <div class="show-password">
+                        <input type="checkbox"
+                               id="showPassword"
+                               onclick="togglePassword()">
+
+                        <label for="showPassword">
+                            Show password
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-brass">
+                    Register
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

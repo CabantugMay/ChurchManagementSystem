@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+  @*   <link rel="stylesheet" href="~/css/Login.css" />
+    <script src="~/js/Login.js"></script> *@
+</head>
+<body>
+
+    @{
+        var loginError = ViewData.ModelState["InvalidCredentials"]?.Errors.FirstOrDefault();
+    }
+
+
+    <div id="loginScreen" class="login-screen" style="">
+        <div class="login-card">
+            <div class="login-title"> Almighty God Covenant Church - Mariveles</div>
+            <div class="login-sub">  </div>
+            <form asp-controller="Account" asp-action="Login" method="post">
+                <div class="field">
+                    <label class="label">Username</label>
+
+                    <div class="password-wrapper">
+                        <input type="text"
+                               id="loginUsername"
+                               name="username"
+                               class="form-control"
+                               value="@(ViewData.ModelState["username"]?.AttemptedValue ?? "")" />
+
+                        @if (loginError != null)
+                        {
+                            <span class="password-warning">
+                                ⚠
+                                <span class="password-tooltip">
+                                    <span>@loginError.ErrorMessage</span>
+                                </span>
+                            </span>
+                        }
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+
+                    <div class="password-wrapper">
+                        <input type="password"
+                               id="loginPassword"
+                               name="password"
+                               class="form-control" />
+
+                        @if (loginError != null)
+                        {
+                            <span class="password-warning">
+                                ⚠
+                                <span class="password-tooltip">
+                                    <span>@loginError.ErrorMessage</span>
+                                </span>
+                            </span>
+                        }
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-brass"> Log In </button>
+                <a asp-controller="Account" asp-action="Register" class="btn btn-brass Register">Register</a>
+            </form>
+
+            
+
+
+          </div>
+      </div>
+</body>
+</html>

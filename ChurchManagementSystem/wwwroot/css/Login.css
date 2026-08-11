@@ -1,0 +1,162 @@
+﻿.login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.login-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    width: 100%;
+    max-width: 360px;
+}
+
+.login-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.login-sub {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.btn-brass {
+    width: 100%;
+}
+
+.Hide {
+    display: none;
+}
+
+.Register {
+    background-color: transparent !important;
+    color: #6f5e5e !important;
+    margin-top: 3px !important;
+    text-decoration: underline !important;
+}
+
+a {
+    appearance: auto;
+    font-style:;
+    font-variant-ligatures:;
+    font-variant-caps:;
+    font-variant-numeric:;
+    font-variant-east-asian:;
+    font-variant-alternates:;
+    font-variant-position:;
+    font-variant-emoji:;
+    font-weight:;
+    font-stretch:;
+    font-size:;
+    font-family:;
+    font-optical-sizing:;
+    font-size-adjust:;
+    font-kerning:;
+    font-feature-settings:;
+    font-variation-settings:;
+    font-language-override:;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em 0em 0em 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: none;
+    text-decoration: none;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-warning {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dc3545;
+    font-size: 18px;
+    cursor: help;
+}
+
+.password-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    bottom: 32px;
+    width: 280px;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: left;
+    transition: opacity 0.2s;
+    z-index: 1000;
+}
+
+    .password-tooltip span {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+.password-warning:hover .password-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.show-password {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+    .show-password input[type="checkbox"] {
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+        accent-color: #8b6f47;
+    }
+
+    .show-password label {
+        cursor: pointer;
+        margin: 0;
+        user-select: none;
+        display: block;
+        font-size: 10px ;
+        color: #4b5563db;
+    }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}

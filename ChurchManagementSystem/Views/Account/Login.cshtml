@@ -3,71 +3,136 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-  @*   <link rel="stylesheet" href="~/css/Login.css" />
-    <script src="~/js/Login.js"></script> *@
+    <script src="~/js/Login.js"></script> 
+     <link rel="stylesheet" href="~/css/Login.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
 </head>
 <body>
 
     @{
         var loginError = ViewData.ModelState["InvalidCredentials"]?.Errors.FirstOrDefault();
+        var InvalidUsername = ViewData.ModelState["InvalidUsername"]?.Errors.FirstOrDefault();
+        var InvalidPassword = ViewData.ModelState["InvalidPassword"]?.Errors.FirstOrDefault();
+        var InvalidPassword2 = ViewData.ModelState["InvalidPassword2"]?.Errors.FirstOrDefault();
+
     }
 
 
     <div id="loginScreen" class="login-screen" style="">
         <div class="login-card">
-            <div class="login-title"> Almighty God Covenant Church - Mariveles</div>
-            <div class="login-sub">  </div>
-            <form asp-controller="Account" asp-action="Login" method="post">
-                <div class="field">
-                    <label class="label">Username</label>
+            <div class="login-card-body">
+                <div class="font-title"> Almighty God Covenant Church Mariveles</div>
+                <div class="login-sub">  </div>
+                <form asp-controller="Account" asp-action="Login" method="post">
+                    <div class="field">
+                        <label class="font-label">Username</label>
 
-                    <div class="password-wrapper">
-                        <input type="text"
-                               id="loginUsername"
-                               name="username"
-                               class="form-control"
-                               value="@(ViewData.ModelState["username"]?.AttemptedValue ?? "")" />
+                        <div class="password-wrapper">
+                            <input type="text"
+                                   id="loginUsername"
+                                   name="username"
+                                   class="form-control"
+                                   value="@ViewData.ModelState["username"]?.AttemptedValue" />
 
-                        @if (loginError != null)
-                        {
-                            <span class="password-warning">
-                                ⚠
-                                <span class="password-tooltip">
-                                    <span>@loginError.ErrorMessage</span>
+
+
+                            @if (InvalidUsername != null)
+                            {
+                                <span class="password-warning">
+                                    ⚠
+                                    <span class="password-tooltip">
+                                        <span>@InvalidUsername.ErrorMessage</span>
+                                    </span>
                                 </span>
-                            </span>
-                        }
-                    </div>
-                </div>
+                            }
 
-                <div class="field">
-                    <label class="label">Password</label>
-
-                    <div class="password-wrapper">
-                        <input type="password"
-                               id="loginPassword"
-                               name="password"
-                               class="form-control" />
-
-                        @if (loginError != null)
-                        {
-                            <span class="password-warning">
-                                ⚠
-                                <span class="password-tooltip">
-                                    <span>@loginError.ErrorMessage</span>
+                            else if (loginError != null)
+                            {
+                                <span class="password-warning">
+                                    ⚠
+                                    <span class="password-tooltip">
+                                        <span>@loginError.ErrorMessage</span>
+                                    </span>
                                 </span>
-                            </span>
-                        }
+                            }
+
+                        
+                        </div>
                     </div>
-                </div>
-                <button type="submit" class="btn btn-brass"> Log In </button>
-                <a asp-controller="Account" asp-action="Register" class="btn btn-brass Register">Register</a>
-            </form>
+
+                    <div class="field">
+                        <label class="font-label">Password</label>
+
+                        <div class="password-wrapper">
+                            <input type="password"
+                                   id="loginPassword"
+                                   name="password"
+                                   class="form-control" />
+
+                            @if (InvalidPassword != null)
+                            {
+                                <span class="password-warning">
+                                    ⚠
+                                    <span class="password-tooltip">
+                                        <span>@InvalidPassword.ErrorMessage</span>
+                                    </span>
+                                </span>
+                            }
+                            else if (loginError != null)
+                            {
+                                <span class="password-warning">
+                                    ⚠
+                                    <span class="password-tooltip">
+                                        <span>@loginError.ErrorMessage</span>
+                                    </span>
+                                </span>
+                            }
+
+                        
+                        </div>
+
+                        <div class="show-password">
+                            <div class="flex">
+                                <input type="checkbox"
+                                       id="showPassword"
+                                       onclick="togglePassword()">
+
+                                <label for="showPassword">
+                                    Show password
+                                </label>
+
+                            </div>
+                            <a asp-controller="Account" asp-action="ForgotPassword" class="btn ForgotPassword ">Forgot Password ?</a>
+
+                        </div>
+                    </div>
+
+                    <div class="button-height">
+                        <button type="submit" class="btn btn-login col-100"> Log In </button>
+                    </div>
+                    <div class="button-height">
+                        <a asp-controller="Account" asp-action="Register" class="btn btn-default Register col-100">Register</a>
+                    </div>
+
+                </form>
 
             
 
 
-          </div>
-      </div>
+            </div>
+        </div>
+        <div class="verse-card">
+            <div class="verse-card-body">
+                <div class="font-verse">
+                    Remember the Sabbath day by keeping it holy. Six days you shall labor and do all your work, but the seventh day is a sabbath to the Lord your God
+                </div>
+                <div class="font-verse-title">~ Exodus 20:8-10</div>
+
+            </div>
+        </div>
+       
+    </div>
 </body>
 </html>

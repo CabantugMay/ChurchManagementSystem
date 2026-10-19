@@ -393,8 +393,8 @@ $.extend( $.validator, {
 	prototype: {
 
 		init: function() {
-			this.labelContainer = $( this.settings.errorLabelContainer );
-			this.errorContext = this.labelContainer.length && this.labelContainer || $( this.currentForm );
+			this.font-labelContainer = $( this.settings.errorLabelContainer );
+			this.errorContext = this.font-labelContainer.length && this.font-labelContainer || $( this.currentForm );
 			this.containers = $( this.settings.errorContainer ).add( this.settings.errorLabelContainer );
 			this.submitted = {};
 			this.valueCache = {};
@@ -991,8 +991,8 @@ $.extend( $.validator, {
 					// actually showing the wrapped element is handled elsewhere
 					place = error.hide().show().wrap( "<" + this.settings.wrapper + "/>" ).parent();
 				}
-				if ( this.labelContainer.length ) {
-					this.labelContainer.append( place );
+				if ( this.font-labelContainer.length ) {
+					this.font-labelContainer.append( place );
 				} else if ( this.settings.errorPlacement ) {
 					this.settings.errorPlacement.call( this, place, $( element ) );
 				} else {

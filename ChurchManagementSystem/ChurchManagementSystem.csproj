@@ -7,13 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ReactApp\**" />
+    <Content Remove="ReactApp\**" />
+    <EmbeddedResource Remove="ReactApp\**" />
+    <None Remove="ReactApp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Models\Attendance.cs" />
     <Compile Remove="Models\MemberMinistry.cs" />
     <Compile Remove="Models\MemberRole.cs" />
     <Compile Remove="Models\Members.cs" />
     <Compile Remove="Models\Ministries.cs" />
     <Compile Remove="Models\PasswordPolicy.cs" />
+    <Compile Remove="Models\Reports\AttendanceReportModel.cs" />
+    <Compile Remove="Models\Reports\AttendanceReportViewModel.cs" />
     <Compile Remove="Models\Roles.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\main - Copy.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,11 +34,13 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Helpers\" />
     <Folder Include="Identity\" />
+    <Folder Include="Models\Reports\" />
     <Folder Include="Repositories\" />
     <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\NewFolder\" />
     <Folder Include="wwwroot\Images\" />
+    <Folder Include="wwwroot\fonts\" />
   </ItemGroup>
 
   <ItemGroup>

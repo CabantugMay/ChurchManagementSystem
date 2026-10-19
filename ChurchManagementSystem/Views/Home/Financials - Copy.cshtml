@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Financials</title>
+
+    <script src="~/js/Financials.js"></script>
+
+</head>
+<body>
+    <div class="home-screen">
+        <div class="home-card">
+            <div class="home-card-body">
+                @await Html.PartialAsync("_Header")
+                <div id="content">
+                    <div id="content">
+                        <div class="">
+                            <div class="card" id="addMembers">
+                                <div id="ManageFinancials">
+                                    <div class="manage-toggle" id="toggleManage">
+                                        Tithes
+                                    </div>
+                                </div>
+                                <div class="manage-box-financials">
+                                    <div class="two-col">
+                                        <form id="financialsForm" class="assign-financials" data-editform="1" asp-controller="Home" asp-action="SetTithes" method="post">
+                                            <div class="field-financials hide">
+                                                <label class="font-label">Date</label>
+                                                <input type="date" id="mDate" name="mDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                                            </div>
+                                            <div id="mFinancials" class="card field-financials">
+                                            </div>
+                                            <button type="submit" class="btn btn-assign-financials">Add assignment</button>
+
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

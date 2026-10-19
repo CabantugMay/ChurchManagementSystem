@@ -34,7 +34,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 //})
 //.AddEntityFrameworkStores<ChurchDbContext>()
 //.AddDefaultTokenProviders();
-
+builder.Services.AddSingleton<DapperContext>();
 
 var app = builder.Build();
 

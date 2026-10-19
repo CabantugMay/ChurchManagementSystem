@@ -4,18 +4,25 @@
     <meta charset="utf-8" />
     <title></title>
     <script src="~/js/login.js"></script>
+    <link rel="stylesheet" href="~/css/Login.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 </head>
 <body>
     @{
+        var InvalidUsername = ViewData.ModelState["InvalidUsername"]?.Errors.FirstOrDefault();
+        var InvalidPassword = ViewData.ModelState["InvalidPassword"]?.Errors.FirstOrDefault();
+        var InvalidPassword2 = ViewData.ModelState["InvalidPassword2"]?.Errors.FirstOrDefault();
+
         var passwordErrors = ViewData.ModelState["password"]?.Errors;
-        var confirmPasswordErrors = ViewData.ModelState["confirmpassword"]?.Errors;
     }
 
     <div id="loginScreen" class="login-screen">
         <div class="login-card">
+            <div class="login-card-body">
 
-            <div class="login-title">
-                Almighty God Covenant Church - Mariveles
+            <div class="font-title">
+                Almighty God Covenant Church Mariveles
             </div>
 
             <div class="login-sub"></div>
@@ -25,16 +32,35 @@
                   method="post">
 
                 <div class="field">
-                    <label class="label">Username</label>
+                    <label class="font-label">Username</label>
 
-                    <input type="text"
-                           id="loginUsername"
-                           name="username"
-                           class="form-control" value="@(ViewData.ModelState["username"]?.AttemptedValue ?? "")" />
+                    <div class="password-wrapper">
+                        <input type="text"
+                               id="loginUsername"
+                               name="username"
+                               class="form-control"
+                               value="@ViewData.ModelState["username"]?.AttemptedValue" />
+
+
+
+                        @if (InvalidUsername != null)
+                        {
+                            <span class="password-warning">
+                                ⚠
+                                <span class="password-tooltip">
+                                    <span>@InvalidUsername.ErrorMessage</span>
+                                </span>
+                            </span>
+                        }
+
+                        
+                    </div>
+
+
                 </div>
 
                 <div class="field">
-                    <label class="label">Password</label>
+                    <label class="font-label">Password</label>
 
                     <div class="password-wrapper">
 
@@ -43,8 +69,16 @@
                                name="password"
                                class="form-control" />
 
-                        @if (passwordErrors != null &&
-                        passwordErrors.Count > 0)
+                        @if (InvalidPassword != null)
+                        {
+                            <span class="password-warning">
+                                ⚠
+                                <span class="password-tooltip">
+                                    <span>@InvalidPassword.ErrorMessage</span>
+                                </span>
+                            </span>
+                        }
+                        else if (passwordErrors != null && passwordErrors.Count > 0)
                         {
                             <span class="password-warning">
                                 ⚠
@@ -62,7 +96,7 @@
                 </div>
 
                 <div class="field">
-                    <label class="label">Confirm Password</label>
+                    <label class="font-label">Confirm Password</label>
 
                     <div class="password-wrapper">
 
@@ -71,17 +105,12 @@
                                name="confirmPassword"
                                class="form-control" />
 
-                        @if (confirmPasswordErrors != null &&
-                             confirmPasswordErrors.Count > 0)
+                        @if (InvalidPassword2 != null )
                         {
                             <span class="password-warning">
                                 ⚠
-
                                 <span class="password-tooltip">
-                                    @foreach (var error in confirmPasswordErrors)
-                                    {
-                                        <span>@error.ErrorMessage</span>
-                                    }
+                                    <span>@InvalidPassword2.ErrorMessage</span>
                                 </span>
                             </span>
                         }
@@ -89,23 +118,39 @@
                     </div>
 
                     <div class="show-password">
-                        <input type="checkbox"
-                               id="showPassword"
-                               onclick="togglePassword()">
+                        <div class="flex">
+                            <input type="checkbox"
+                                   id="showPassword"
+                                   onclick="togglePassword()">
 
-                        <label for="showPassword">
-                            Show password
-                        </label>
+                            <label for="showPassword">
+                                Show password
+                            </label>
+
+                        </div>
                     </div>
                 </div>
 
-                <button type="submit"
-                        class="btn btn-brass">
-                    Register
-                </button>
+                <div class="button-height">
+                    @* <a asp-controller="Account" asp-action="Register" class="btn btn-default Register col-100">Register</a> *@
+                    <button type="submit" class="btn btn-default  Register col-100"> Register </button>
+                </div>
 
+                <div class="button-height">
+                        <a asp-controller="Account" asp-action="Login" class="btn btn-back col-100">Back</a>
+                </div>
             </form>
 
+            </div>
+        </div>
+        <div class="verse-card-reg">
+            <div class="verse-card-body">
+                <div class="font-verse">
+                    Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age
+                </div>
+                <div class="font-verse-title">~ Matthew 28:19-20</div>
+
+            </div>
         </div>
     </div>
 </body>

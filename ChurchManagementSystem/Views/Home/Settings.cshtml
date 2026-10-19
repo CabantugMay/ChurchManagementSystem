@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Settings</title>
+    <script src="~/js/Home.js"></script>
+
+    <script src="~/js/Settings.js"></script>
+
+</head>
+<body>
+    <div class="home-screen">
+        <div class="home-card">
+            <div class="home-card-body">
+                @await Html.PartialAsync("_Header")
+                <div id="members-section" class="settings">
+                    <div class="content-settings-edit" id="editMembers">
+                        <div class="font-label-settings member-settings">List of Members</div>
+                        <div class="card">
+                            <div class="member-add-row" data-editform="1" id="memberFormSettings">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-settings-add" id="addMembers">
+                        <div class="font-label-settings addmember-settings">Add/Edit Members</div>
+                        <div class="card">
+                            <form class="member-edit-row" data-editform="1" id="memberFormUpdate" asp-controller="Home" asp-action="AddMembers" method="post" onsubmit="return isComplete(event)">
+                                <input type="text" id="ID" class="hide" name="ID">
+
+                                <div class="name-settings grid3">
+                                    <div>
+                                        <label>First Name<span class="label-required">*</span></label>
+                                        <input type="text" id="firstName" class="input-field required" name="FirstName">
+                                    </div>
+                                    <div>
+                                        <label>Middle Name</label>
+                                        <input type="text" id="middleName" class="input-field" name="MiddleName">
+                                    </div>
+                                    <div>
+                                        <label>Last Name</label>
+                                        <input type="text" id="lastName" class="input-field" name="LastName">
+                                    </div>
+                                </div>
+                                <div class="name-settings grid3">
+                                    <div>
+                                        <label>Username<span class="label-required">*</span></label>
+                                        <input type="text" id="username" class="input-field required" name="Username">
+                                    </div>
+                                    <div>
+                                        <label>Gender<span class="label-required">*</span></label>
+                                        <select id="gender" class="input-field required" name="Gender">
+                                            <option value="" selected disabled></option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>Birthday</label>
+                                        <input type="date" id="birthday" class="input-field" name="BirthDate">
+                                    </div>
+                                </div>
+                                <div class="name-settings grid1">
+                                    <div>
+                                        <label>Address</label>
+                                        <input type="text" id="address" class="input-field" name="Address">
+                                    </div>
+                                </div>
+                                <div class="name-settings grid2-2">
+                                    <div>
+                                        <label>Phone Number</label>
+                                        <input type="tel"
+                                               id="contact"
+                                               class="input-field"
+                                               name="PhoneNumber"
+                                               placeholder="09XX XXX XXXX"
+                                               maxlength="13"
+                                               inputmode="numeric">
+                                    </div>
+                                    <div>
+                                        <label>Email</label>
+                                        <input type="email" id="email" class="input-field" name="Email">
+                                    </div>
+                                </div>
+                                <div class="btn1-flex">
+                                    <button type="submit" class="btn btn-Save-Settings" id="btnSave">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="ministry-section" class="settings">
+                    <div class="content-settings-edit"> 
+                        <div class="font-label-settings member-settings">List of Ministry</div>
+                        <div class="card">
+                            <div id="ministry-container" class="ministry-list"></div>
+                        </div>
+                      
+                        <div class="card-settings-add">
+                            <div class="separator">
+                                <span></span>
+                                <b>***</b>
+                                <span></span>
+                            </div>
+                            <form asp-controller="Home" asp-action="AddMinistry" id="addMinistryForm">
+                                <div id="Ministry">
+                                    <input type="text" id="addMinistry" class="margin-10"  name="nMinistry" placeholder="New Ministry">
+                                    <button type="submit" id="btnAddMinistry" class="btn btn-default">Add</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    <div class="content-settings-edit">
+                        <div class="font-label-settings member-settings">Ministry Designation</div>
+                        <div class="card">
+                            <div id="ministryDesContainer" class="ministry-list">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="financials-section" class="settings"></div>
+            </div>
+        </div>
+        
+</div>
+</body>
+</html>

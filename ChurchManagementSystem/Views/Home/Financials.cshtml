@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Financials</title>
+    <script src="~/js/Home.js"></script>
+
+    <script src="~/js/Financials.js"></script>
+
+</head>
+<body>
+    <div class="home-screen">
+        <div class="home-card">
+            <div class="home-card-body">
+                @await Html.PartialAsync("_Header")
+                <div class="content">
+                    <div class="financials-title">
+                        <label class="title-subclass">Tithes</label>
+                    </div>
+                    <div class="two-col">
+                        <form id="financialsForm" class="assign-financials card" data-editform="1" asp-controller="Home" asp-action="SetTithes" method="post">
+                            <div class="field-financials hide">
+                                <label class="font-label">Date</label>
+                                <input type="date" id="mDate" name="mDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                            </div>
+                            <div id="mFinancials" class="field-financials">
+                                <div class="tithes-fields">
+                                    <input id="tithes-members" class="tithes-members" type="text" placeholder="Search Members" autocomplete="off">
+                                    <div id="member-results" class="member-results-financials"></div>
+                                </div>
+                                <div class="tithes-fields">
+                                    <input id="tithes-amount" class="tithes-amount right" name="amount" min="0"
+                                           step="0.01" type="number" placeholder="Amount" autocomplete="off" onkeydown="if(event.key === 'Enter') event.preventDefault();">
+                                </div>
+                                <button type="submit" class="btn btn-default">Add Tithes</button>
+                            </div>
+
+                        </form>
+                        <form id="financialsFormList" class="assign-financials card" data-editform="1" method="post">
+                            <div id="mFinancials-Report" class="field-financials">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="financials-title">
+                        <label class="title-subclass">Offerings</label>
+                    </div>
+                    <form id="OfferingsForm" class="assign-financials card" data-editform="1" method="post" action="/Home/SetOfferings">
+                        <div class="field-financials hide">
+                            <label class="font-label">Date</label>
+                            <input type="date" id="mDate-Offerings" name="mDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                        </div>
+                        <div id="mOfferings" class="field-financials">
+                            <div class="offerings-fields">
+                                <input id="offerings-amount" class="offerings-amount right" name="amount" min="0" step="0.01" type="number" placeholder="Amount" autocomplete="off">
+                            </div>
+                            <button type="submit" class="btn btn-default">Add offerings</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="content">
+                    <div class="financials-title">
+                        <label class="title-subclass">Rent</label>
+                    </div>
+                    <div class="two-col-rent">
+                        <form id="financialsForm" class="assign-financials card" data-editform="1" asp-controller="Home" asp-action="SetRent" method="post">
+                            <div class="field-financials hide">
+                                <label class="font-label">Date</label>
+                                <input type="date" id="mDate-Rent" name="mDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                            </div>
+                            <div id="mFinancials-Rent" class="field-financials">
+                                <div class="Rent-fields">
+                                    <input id="Rent-members" class="Rent-members" type="text" placeholder="Search Members" autocomplete="off">
+                                    <div id="member-results-rent" class="member-results-financials"></div>
+                                </div>
+                                <div class="Rent-fields">
+                                    <input id="Rent-amount" class="Rent-amount right" name="amount" min="0"
+                                           step="0.01" type="number" placeholder="Amount" autocomplete="off" onkeydown="if(event.key === 'Enter') event.preventDefault();">
+                                </div>
+                                <button type="submit" class="btn btn-default">Add Rent</button>
+                            </div>
+
+                        </form>
+                        <form id="financialsFormListRent" class="assign-financials card" data-editform="1" method="post">
+                            <div id="mFinancials-Report-Rent" class="field-financials">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

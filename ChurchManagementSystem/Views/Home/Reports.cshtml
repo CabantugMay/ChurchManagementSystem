@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+@{
+    string[] Attendance = new String[] {
+        "Member_ID", "Attendee",    "Week1",   "Week2",    "Week3",    "Week4"
+    };
+}
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>Monthly Report</title>
+    <script src="~/js/Home.js"></script>
+
+    <script src="~/js/Reports.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+<body>
+    <div class="home-screen">
+        <div class="home-card">
+            <div class="home-card-body">
+                @await Html.PartialAsync("_Header")
+                <div class="content-button">
+                    <button type="button" id="btnExportPDF" class="btn-export">
+                        <span class="pdf-icon"></span> Export PDF
+                    </button>
+                </div>
+                <div class="reports">
+
+                    <div id="content-attendance" class="content">
+                        <div class="card">
+                            <table class="attendance-table">
+                                <thead>
+                                    <tr id="attendanceTableHeader"></tr>
+                                </thead>
+                                <tbody id="attendanceTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="content-ministry-report" class="content">
+                        <div class="card">
+                            <table class="ministry-table">
+                                <thead>
+                                    <tr id="ministryTableHeader"></tr>
+                                </thead>
+                                <tbody id="ministryTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div id="content-financials-report" class="content">
+                        <div class="card">
+                            <table class="tithes-table">
+                                <thead>
+                                    <tr id="tithesTableHeader"></tr>
+                                </thead>
+                                <tbody id="tithesTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

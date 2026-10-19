@@ -3,33 +3,34 @@
 <head>
     <meta charset="utf-8" />
     <title>Ministry</title>
+    <script src="~/js/Home.js"></script>
+
+    <script src="~/js/Ministry.js"></script>
+
 </head>
 <body>
-    <div class="wrap">
-        <div class="top-row">
-            <div>
-                <input type="text" id="churchNameInput" class="brand-name-input disabled" value="Almighty God Covenant Church - Mariveles" disabled>
+    <div class="home-screen">
+        <div class="home-card">
+            <div class="home-card-body">
+                @await Html.PartialAsync("_Header")
+                <div id="content" class="content">
+                    <form id="ministryForm" class="assign-ministry" data-editform="1" asp-controller="Home" asp-action="AssignMinistry" method="post">
+                        <div class="field-ministry hide">
+                            <label class="font-label">Date</label>
+                            <input type="date" id="mDate" name="mDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                        </div>
+                        <div id="mMinistry" class="field-ministry">
+                        </div>
+                        <div class="padding-10-lr">
+                            <button type="submit" class="btn btn-assign-ministry">Add assignment</button>
+                        </div>
+
+                    </form>
+                </div>
+                </div>
             </div>
+           
         </div>
-
-        <div id="importNotice"></div>
-
-        <div class="control-row">
-            <div class="tabs" id="tabsRow">
-                <a asp-controller="Home" asp-action="Summary" class="tab-btn" data-tab="dashboard">Summary</a>
-                <a asp-controller="Home" asp-action="Attendance" class="tab-btn" data-tab="attendance">Attendance</a> 
-                <a asp-controller="Home" asp-action="Ministry" class="tab-btn active" data-tab="ministry">Ministry schedule</a>
-                <a asp-controller="Home" asp-action="Tithes" class="tab-btn" data-tab="giving">Tithes</a>
-                <a asp-controller="Home" asp-action="Offering" class="tab-btn" data-tab="offering">Offering</a>
-                <a asp-controller="Home" asp-action="Rental" class="tab-btn" data-tab="rental">Rental Pledge</a>
-            </div>
-            <div id="dateInputWrap" style="display: none;">
-                <input type="date" id="selectedDate">
-            </div>
-        </div>
-
-        <div id="errorBanner"></div>
-        <div id="content"><div class="report-section"><div class="report-header"><div class="section-title" style="margin-bottom:0">Monthly report</div><div style="display:flex;gap:8px;align-items:center"><input type="month" id="reportMonth" value="2026-08"><button class="btn btn-brass" id="exportPdfBtn" type="button">Export PDF</button></div></div><div class="card" style="margin-bottom:20px"><div class="section-title">Summary of Attendees — August 2026</div><div class="table-wrap"><table class="report-table"><thead><tr><th>Attendees</th><th>Week 1<span class="week-sub">Aug 2</span></th><th>Week 2<span class="week-sub">Aug 9</span></th><th>Week 3<span class="week-sub">Aug 16</span></th><th>Week 4<span class="week-sub">Aug 23</span></th><th>Week 5<span class="week-sub">Aug 30</span></th></tr></thead><tbody><tr><td>Adrian Lopez</td><td class="present-cell">✓</td><td class="present-cell">✓</td><td></td><td></td><td></td></tr><tr><td>Hariz Villanueva</td><td class="present-cell">✓</td><td class="present-cell">✓</td><td></td><td></td><td></td></tr><tr><td>King Pearl Dionaldo</td><td class="present-cell">✓</td><td class="present-cell">✓</td><td></td><td></td><td></td></tr><tr><td>Alfonzo Ambuyoc</td><td class="present-cell">✓</td><td class="present-cell">✓</td><td></td><td></td><td></td></tr><tr><td>Ijoem Mendoza</td><td class="present-cell">✓</td><td class="present-cell">✓</td><td></td><td></td><td></td></tr><tr><td>Joselle Lacuata</td><td class="present-cell">✓</td><td class="present-cell">✓</td><td></td><td></td><td></td></tr><tr><td>Jenny May Cabantug</td><td class="present-cell">✓</td><td class="present-cell">✓</td><td></td><td></td><td></td></tr><tr><td>Krimson Dolorzo</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Renz Hector Mare</td><td></td><td></td><td></td><td></td><td></td></tr><tr class="total-row"><td>Visitors</td><td style="white-space:normal">Allan (invite by Ijoem)</td><td style="white-space:normal"></td><td style="white-space:normal"></td><td style="white-space:normal"></td><td style="white-space:normal"></td></tr></tbody></table></div></div><div class="card" style="margin-bottom:20px"><div class="section-title">Ministry Schedule — August 2026</div><div class="table-wrap"><table class="report-table"><thead><tr><th>Ministry</th><th>Week 1<span class="week-sub">Aug 2</span></th><th>Week 2<span class="week-sub">Aug 9</span></th><th>Week 3<span class="week-sub">Aug 16</span></th><th>Week 4<span class="week-sub">Aug 23</span></th><th>Week 5<span class="week-sub">Aug 30</span></th></tr></thead><tbody><tr><td>Teacher</td><td style="white-space:normal"><span style="color:var(--sage)">Jenny May Cabantug</span></td><td style="white-space:normal"><span style="color:var(--sage)">King Pearl Dionaldo</span></td><td></td><td></td><td></td></tr><tr><td>Song Lead</td><td style="white-space:normal"><span style="color:var(--sage)">Joselle Lacuata</span></td><td style="white-space:normal"><span style="color:var(--sage)">Ijoem Mendoza</span></td><td></td><td></td><td></td></tr><tr><td>Guitarist</td><td style="white-space:normal"><span style="color:var(--sage)">Alfonzo Ambuyoc</span></td><td style="white-space:normal"><span style="color:var(--sage)">Hariz Villanueva</span></td><td></td><td></td><td></td></tr><tr><td>Food</td><td style="white-space:normal"><span style="color:var(--sage)">Alfonzo Ambuyoc</span>, <span style="color:var(--sage)">Ijoem Mendoza</span></td><td style="white-space:normal"><span style="color:var(--sage)">Hariz Villanueva</span>, <span style="color:var(--sage)">King Pearl Dionaldo</span></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="card"><div class="section-title">Tithes — August 2026</div><div class="table-wrap"><table class="report-table"><thead><tr><th>Tithers</th><th>Week 1<span class="week-sub">Aug 2</span></th><th>Week 2<span class="week-sub">Aug 9</span></th><th>Week 3<span class="week-sub">Aug 16</span></th><th>Week 4<span class="week-sub">Aug 23</span></th><th>Week 5<span class="week-sub">Aug 30</span></th><th>Total</th></tr></thead><tbody><tr><td>Jenny May Cabantug</td><td>2,000.00</td><td></td><td></td><td></td><td></td><td>2,000.00</td></tr><tr><td>Adrian Lopez</td><td>500.00</td><td>550.00</td><td></td><td></td><td></td><td>1,050.00</td></tr><tr><td>Ijoem Mendoza</td><td>1,000.00</td><td></td><td></td><td></td><td></td><td>1,000.00</td></tr><tr><td>Joselle Lacuata</td><td>500.00</td><td></td><td></td><td></td><td></td><td>500.00</td></tr><tr><td>Alfonzo Ambuyoc</td><td>1,500.00</td><td></td><td></td><td></td><td></td><td>1,500.00</td></tr><tr><td>King Pearl Dionaldo</td><td></td><td>10,000.00</td><td></td><td></td><td></td><td>10,000.00</td></tr><tr><td>Hariz Villanueva</td><td></td><td>1,500.00</td><td></td><td></td><td></td><td>1,500.00</td></tr><tr class="total-row"><td>Total</td><td>5,500.00</td><td>12,050.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>17,550.00</td></tr></tbody></table></div><div class="table-wrap" style="margin-top:14px"><table class="report-table"><thead><tr><th></th><th>Week 1<span class="week-sub">Aug 2</span></th><th>Week 2<span class="week-sub">Aug 9</span></th><th>Week 3<span class="week-sub">Aug 16</span></th><th>Week 4<span class="week-sub">Aug 23</span></th><th>Week 5<span class="week-sub">Aug 30</span></th><th>Total</th></tr></thead><tbody><tr class="breakdown-row"><td>Tithes of the tithes (10%)</td><td>550.00</td><td>1,205.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1,755.00</td></tr><tr class="breakdown-row"><td>Church Operation (10%)</td><td>495.00</td><td>1,084.50</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1,579.50</td></tr><tr class="breakdown-row"><td>Family Welfare (50%)</td><td>2,227.50</td><td>4,880.25</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7,107.75</td></tr><tr class="breakdown-row"><td>Local Mission (25%)</td><td>1,113.75</td><td>2,440.13</td><td>0.00</td><td>0.00</td><td>0.00</td><td>3,553.88</td></tr><tr class="breakdown-row"><td>Pastor Allowance (25%)</td><td>1,113.75</td><td>2,440.13</td><td>0.00</td><td>0.00</td><td>0.00</td><td>3,553.88</td></tr><tr class="total-row"><td>Total</td><td>5,500.00</td><td>12,050.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>17,550.00</td></tr></tbody></table></div></div></div></div>
-    </div>
+        
 </body>
 </html>

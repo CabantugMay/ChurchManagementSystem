@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Attendance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="wrap">
+        @await Html.PartialAsync("_Header")
+        <div id="content">
+            <div id="content">
+                <div class="two-col">
+                    <div class="card">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                            <button class="manage-toggle" id="toggleManage">
+                                Manage members
+                                <span class="toggle-arrow"></span>
+                            </button>
+                        </div>
+                        <div class="manage-box">
+                            <form id="memberForm" style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+                                <input type="text" id="newLastName" placeholder="Member name" style="flex:1;min-width:140px">
+                                <button type="submit" class="btn btn-default">Add</button>
+                            </form>
+                            <div class="member-row">
+                                <span>
+                                    Adrian Lopez 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="member-row">
+                                <span>
+                                    Hariz Villanueva 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="member-row">
+                                <span>
+                                    King Pearl Dionaldo 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="member-row">
+                                <span>
+                                    Alfonzo Ambuyoc 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="member-row">
+                                <span>
+                                    Ijoem Mendoza 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="member-row">
+                                <span>
+                                    Joselle Lacuata 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="member-row">
+                                <span>
+                                    Jenny May Cabantug 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="member-row">
+                                <span>
+                                    Krimson Dolorzo 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="member-row">
+                                <span>
+                                    Renz Hector Mare 
+                                </span>
+                                <div style="display:flex;gap:6px">
+                                    <button class="btn btn-icon btn-edit"
+                                            data-editmember="zg8n7m24"
+                                            title="Change"
+                                            aria-label="Change member">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="btn btn-icon btn-delete"
+                                            data-delmember="zg8n7m24"
+                                            title="Remove"
+                                            aria-label="Remove member">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field" style="max-width:360px">
+                            <input type="text" id="memberSearch" placeholder="Search members..." value="" autocomplete="off">
+                        </div>
+                        <div class="cat-block">
+                            <div class="cat-label">Adults</div>
+                            <div class="chip-row">
+                                <button class="chip present" data-toggle="zg8n7m24" data-name="adrian lopez">✓ Adrian Lopez</button>
+                            </div>
+                        </div>
+                        <div class="cat-block">
+                            <div class="cat-label">Youth</div>
+                            <div class="chip-row">
+                                <button class="chip present" data-toggle="ghsiumym" data-name="hariz villanueva">✓ Hariz Villanueva</button>
+                                <button class="chip present" data-toggle="3fkea2df" data-name="king pearl dionaldo">✓ King Pearl Dionaldo</button>
+                                <button class="chip present" data-toggle="c79nrbx9" data-name="alfonzo ambuyoc">✓ Alfonzo Ambuyoc</button>
+                                <button class="chip present" data-toggle="hsp63vsy" data-name="ijoem mendoza">✓ Ijoem Mendoza</button>
+                                <button class="chip present" data-toggle="mv3x5wa8" data-name="joselle lacuata">✓ Joselle Lacuata</button>
+                                <button class="chip present" data-toggle="hnms1hpl" data-name="jenny may cabantug">✓ Jenny May Cabantug</button>
+                                <button class="chip present" data-toggle="v8itu20n" data-name="krimson dolorzo">✓ Krimson Dolorzo</button>
+                                <button class="chip" data-toggle="zghyfdeh" data-name="renz hector mare">Renz Hector Mare</button>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px">
+                            <div class="cat-label">First-time visitors</div>
+                            <form id="visitorForm" style="display:flex;gap:8px;margin-bottom:8px">
+                                <input type="text" id="visitorName" placeholder="Visitor name" style="flex:1">
+                                <button type="submit" class="btn btn-default">Add</button>
+                            </form>
+                            <div class="chip-row"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="section-title">Summary — Aug 23</div>
+                        <div class="summary-row">
+                            <span style="color:var(--slate)">Adults</span>
+                            <span style="font-family:var(--font-mono)">1/1</span>
+                        </div>
+                        <div class="summary-row">
+                            <span style="color:var(--slate)">Youth</span>
+                            <span style="font-family:var(--font-mono)">7/8</span>
+                        </div>
+                        <div class="summary-row">
+                            <span style="color:var(--slate)">Children</span>
+                            <span style="font-family:var(--font-mono)">0/0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span style="color:var(--slate)">Visitors</span>
+                            <span style="font-family:var(--font-mono)">0</span>
+                        </div>
+                        <div class="summary-total">
+                            <span style="font-family:var(--font-body)">Total present</span>
+                            <span>8</span>
+                        </div>
+                        <div style="margin-top:22px;border-top:1px solid var(--border);padding-top:14px">
+                            <div class="section-title" style="margin-bottom:8px">Recent Sundays</div>
+                            <div class="row">
+                                <span>Aug 23</span>
+                                <span style="font-family:var(--font-mono)">8 total</span>
+                            </div>
+                            <div class="row">
+                                <span>Aug 16</span>
+                                <span style="font-family:var(--font-mono)">6 total</span>
+                            </div>
+                            <div class="row">
+                                <span>Aug 9</span>
+                                <span style="font-family:var(--font-mono)">7 total</span>
+                            </div>
+                            <div class="row">
+                                <span>Aug 2</span>
+                                <span style="font-family:var(--font-mono)">8 total · 1 new</span>
+                            </div>
+                            <div class="row">
+                                <span>Jul 29</span>
+                                <span style="font-family:var(--font-mono)">0 total</span>
+                            </div>
+                            <div class="row">
+                                <span>Jul 26</span>
+                                <span style="font-family:var(--font-mono)">8 total · 1 new</span>
+                            </div>
+                            <div class="row">
+                                <span>Jul 19</span>
+                                <span style="font-family:var(--font-mono)">8 total</span>
+                            </div>
+                            <div class="row">
+                                <span>Jul 12</span>
+                                <span style="font-family:var(--font-mono)">7 total</span>
+                            </div>
+                            <div class="row">
+                                <span>Jul 5</span>
+                                <span style="font-family:var(--font-mono)">6 total</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

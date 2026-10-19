@@ -1,0 +1,83 @@
+﻿
+@{
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+}
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+    <script type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+    </script>
+
+    <script nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+    </script>
+
+</header>
+<div class="header">
+    <div class="home-title">
+        <input type="text" id="churchNameInput" class="brand-name-input disabled" value="AGCC" disabled>
+    </div>
+
+    <div class="control-row">
+        <div class="tabs" id="tabsRow">
+        
+            <div class="btn-Header">
+            <a asp-controller="Home" asp-action="Attendance" id="attendanceBtn" class="tab-btn @(currentAction == "Attendance" ? "active" : "")" data-tab="attendance">Attendance</a>
+            <a asp-controller="Home" asp-action="Ministry" id="ministryBtn" class="tab-btn @(currentAction == "Ministry" ? "active" : "")" data-tab="ministry">Ministry</a>
+            <a asp-controller="Home" asp-action="Financials" id="FinancialsBtn" class="tab-btn @(currentAction == "Financials" ? "active" : "")" data-tab="giving">Financials</a>
+            <a asp-controller="Home" asp-action="Reports" id="SummaryBtn" class="tab-btn @(currentAction == "Reports" ? "active" : "")" data-tab="dashboard">Reports</a>
+            @* <a asp-controller="Home" asp-action="Settings" id="settingsBtn" class="tab-btn @(currentAction == "Settings" ? "active" : "")" data-tab="settings">Settings</a> *@
+                <!-- SETTINGS -->
+                <div class="settings-menu">
+
+                    <a asp-controller="Home"
+                       asp-action="Settings"
+                       id="settingsBtn"
+                       class="tab-btn @(currentAction == "Settings" ? "active" : "")"
+                       data-tab="settings">
+                        Settings <span class="dropdown-icon">▼</span>
+                    </a>
+
+                    <div class="settings-dropdown">
+                        <a href="Settings">
+                            <span>Members</span>
+                            <ion-icon name="people-outline"></ion-icon>
+                        </a>
+
+                        <a href="Settings/#ministry-section">
+                            <span>Ministry</span>
+                            <ion-icon name="business-outline"></ion-icon>
+                        </a>
+
+                        <a href="Settings/#financials-section">
+                            <span>Financials</span>
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+   </div>
+        <div id="dateInputWrap" style="display: none;">
+            <input type="date" id="selectedDate">
+        </div>
+
+    <div class="report-header">
+
+        <div class="calendar-container">
+            <input class="calendar"
+                   type="date"
+                   id="reportMonth"
+                   value="">
+        </div>
+
+    </div>
+</div>
+
+@* <div id="errorBanner"></div> *@
+<partial name="prompt" />

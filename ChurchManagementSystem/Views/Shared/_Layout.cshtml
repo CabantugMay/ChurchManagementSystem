@@ -3,38 +3,17 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/Login.css" />
-    <link rel="stylesheet" href="~/css/Home.css" />
-    <script src="~/js/Home.js"></script>
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/mobile.css" />
+    <link rel="stylesheet" href="~/css/tablet.css" />
+    @* <link rel="stylesheet" href="~/css/Home.css" /> *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="~/js/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
-@*     <div class="wrap">
-        <div class="top-row">
-            <div>
-                <input type="text" id="churchNameInput" class="brand-name-input" value="" />
-            </div>
-            <div class="role-row">
-                <button class="btn btn-ghost" id="exportBtn" style="color:var(--brass-dark);border-color:var(--border)">Export backup</button>
-                <button class="btn btn-ghost" id="importBtn" style="color:var(--brass-dark);border-color:var(--border)">Import backup</button>
-                <input type="file" id="importFile" accept="application/json" style="display:none" />
-                <span>Viewing as</span>
-                <select id="roleSelect"></select>
-            </div>
-        </div>
-
-        <div id="importNotice"></div>
-
-        <div class="control-row">
-            <div class="tabs" id="tabsRow"></div>
-            <div id="dateInputWrap"><input type="date" id="selectedDate" /></div>
-        </div>
-
-        <div id="errorBanner"></div>
-        <div id="content"></div>
-    </div> *@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

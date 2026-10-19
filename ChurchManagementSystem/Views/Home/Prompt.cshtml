@@ -1,0 +1,35 @@
+﻿
+@{
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+}
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="~/js/Home.js"></script>
+
+</header>
+<div class="prompt">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="successPopup" class="success-popup">
+            <div class="success-popup-content">
+
+                <button type="button"
+                        class="success-popup-close"
+                        id="successPopupClose">
+                    ×
+                </button>
+
+                <div class="success-icon">✓</div>
+
+                <div class="success-message">
+                    @TempData["SuccessMessage"]
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+
+
+@* <div id="errorBanner"></div> *@
